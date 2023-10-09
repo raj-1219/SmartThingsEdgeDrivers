@@ -370,8 +370,8 @@ local matter_driver_template = {
     capabilities.colorTemperature,
   },
     sub_drivers = {
-    require("eve-energy")
-  }
+    MatterDriver.lazy_load_sub_driver(require("eve-energy"))
+   }
 }
 
 local matter_driver = MatterDriver("matter-switch", matter_driver_template)

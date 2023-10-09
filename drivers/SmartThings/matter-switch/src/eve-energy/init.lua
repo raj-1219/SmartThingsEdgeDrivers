@@ -42,9 +42,9 @@ local REPORT_TIMEOUT = (15 * 60) -- Report the value each 15 minutes
 
 local function is_eve_energy_products(opts, driver, device)
   if device.manufacturer_info.vendor_id == EVE_MANUFACTURER_ID then
-    return true
+    local subdriver = require("eve-energy")
+    return true, subdriver
   end
-
   return false
 end
 
